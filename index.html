@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spoorthy Reddy Merugu – Developer Portfolio</title>
+  <meta name="description" content="Full Stack Web Developer portfolio – Python, Django, React, Node.js, AWS, REST APIs, PostgreSQL, MongoDB." />
+  <style>
+    :root{
+      --bg:#0b0d10;           /* background */
+      --panel:#11151a;        /* cards */
+      --text:#e8edf1;         /* text */
+      --muted:#a7b1bb;        /* secondary text */
+      --brand:#5eead4;        /* accents */
+      --accent:#60a5fa;       /* hover/links */
+      --ring: rgba(94,234,212,.35);
+      --code:#0f172a;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:var(--accent)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header.nav{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:linear-gradient(to bottom, rgba(11,13,16,.85), rgba(11,13,16,.55));border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    .nav-wrap{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:10px 24px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px var(--ring)}
+    .nav-links{display:flex;gap:18px}
+    .nav-links a{font-weight:600;color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .mobile{display:none}
+
+    .hero{padding:72px 24px 36px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+    .title{font-size:40px;line-height:1.1;margin:0 0 8px}
+    .subtitle{color:var(--muted);font-size:18px;margin:0 0 18px}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.35);font-size:12px;color:#cfe1ff;margin-right:8px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:var(--brand);color:#06201b;font-weight:700;border:1px solid rgba(255,255,255,.08)}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .btn:focus,.btn:hover{outline:none;box-shadow:0 0 0 6px var(--ring)}
+
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px}
+    .grid{display:grid;gap:18px}
+
+    h2.section{font-size:26px;margin:26px 0 12px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{padding:6px 10px;border-radius:10px;border:1px dashed rgba(255,255,255,.18);color:#d6f7f1;background:rgba(94,234,212,.08);font-size:13px}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:0;font-size:18px}
+    .meta{font-size:12px;color:var(--muted)}
+    .badge{display:inline-block;font-size:11px;padding:4px 8px;border-radius:999px;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.35);margin:4px 6px 0 0}
+    .card .links{margin-top:auto;display:flex;gap:10px}
+    .card .links a{font-weight:700}
+
+    .timeline{display:grid;gap:12px}
+    .item{padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0));display:grid;gap:6px}
+    .item .where{display:flex;justify-content:space-between;gap:8px}
+    .item .where b{color:#e6fbf7}
+
+    footer{margin:36px 0 60px;color:var(--muted);text-align:center}
+
+    code{background:var(--code);padding:2px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.06)}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .nav-links{display:none}
+      .mobile{display:block}
+      .title{font-size:32px}
+      .cards{grid-template-columns:1fr}
+    }
+    @media print{
+      header.nav, .actions, .mobile{display:none!important}
+      body{background:#fff;color:#000}
+      .panel,.card,.item{border-color:#ccc}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-wrap">
+      <div class="brand"><span class="dot"></span> <span>Spoorthy Reddy Merugu</span></div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="mobile" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="chip">Full Stack Web Developer</p>
+          <h1 class="title">Building scalable, user‑centric web apps & APIs</h1>
+          <p class="subtitle">4+ years across Python/Django, Node/Express, React, Spring Boot, and AWS. Focused on REST APIs, performance, and clean architecture.</p>
+          <div class="actions">
+            <a class="btn" href="#projects" aria-label="View Projects">View Projects</a>
+            <a class="btn secondary" href="#contact" aria-label="Get in touch">Contact</a>
+            <a class="btn secondary" href="mailto:spoorthyreddy232000@gmail.com">Email</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="section" style="margin-top:0">Quick Stats</h2>
+          <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="item"><div class="where"><b>APIs</b><span class="meta">REST/JSON/XML</span></div><div>Auth, integrations, presigned S3</div></div>
+            <div class="item"><div class="where"><b>Cloud</b><span class="meta">AWS</span></div><div>EC2, S3, Lambda, SES, IAM</div></div>
+            <div class="item"><div class="where"><b>DB</b><span class="meta">SQL/NoSQL</span></div><div>PostgreSQL, MongoDB, MySQL</div></div>
+            <div class="item"><div class="where"><b>Frontend</b><span class="meta">React</span></div><div>Responsive UI, SPA</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="panel">
+      <h2 class="section">About</h2>
+      <p>I'm a developer who enjoys turning complex requirements into clean, maintainable systems. I design and build backends, integrate APIs, and deploy to cloud environments with security and performance in mind. Recently at <b>Wayfair</b>, I optimized PostgreSQL queries by ~50% and delivered production REST APIs powering e‑commerce features.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="panel">
+      <h2 class="section">Skills</h2>
+      <div class="skills">
+        <span class="tag">Python</span>
+        <span class="tag">Django</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">Perl</span>
+        <span class="tag">Shell Scripting</span>
+        <span class="tag">REST / JSON / XML</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">AWS (EC2, S3, Lambda, SES, IAM)</span>
+        <span class="tag">Git</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Tableau</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section">Featured Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Cloud-Based File Sharing Tool</h3>
+          <p class="meta">AWS EC2 · S3 · Lambda · SES · HTML/CSS/JS</p>
+          <p>Secure uploads, presigned S3 URLs for download, and serverless email notifications via Lambda + SES. IAM‑based access control.</p>
+          <div>
+            <span class="badge">REST API</span><span class="badge">Serverless</span><span class="badge">Security</span>
+          </div>
+          <div class="links">
+            <a href="#" aria-label="GitHub link">GitHub ↗</a>
+            <a href="#" aria-label="Live demo">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Online Ticket Booking System</h3>
+          <p class="meta">Node.js · Express · React · MongoDB</p>
+          <p>End‑to‑end booking with auth, payments integration, and indexed queries reducing latency by ~30%.</p>
+          <div>
+            <span class="badge">Auth</span><span class="badge">Payments</span><span class="badge">Optimization</span>
+          </div>
+          <div class="links">
+            <a href="#">GitHub ↗</a>
+            <a href="#">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Farmkart – Direct‑to‑Consumer Marketplace</h3>
+          <p class="meta">Python · Django · PostgreSQL</p>
+          <p>APIs for listings, pricing, orders; admin dashboard; secure checkout.</p>
+          <div>
+            <span class="badge">E‑commerce</span><span class="badge">Django REST</span><span class="badge">PostgreSQL</span>
+          </div>
+          <div class="links">
+            <a href="#">GitHub ↗</a>
+            <a href="#">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Social Networking Site</h3>
+          <p class="meta">Spring Boot · Microservices · MongoDB · React</p>
+          <p>Profiles, feed, and messaging with microservices architecture for scale.</p>
+          <div>
+            <span class="badge">Microservices</span><span class="badge">NoSQL</span><span class="badge">React</span>
+          </div>
+          <div class="links">
+            <a href="#">GitHub ↗</a>
+            <a href="#">Live Demo ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section">Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="where"><b>Wayfair</b><span class="meta">Software Engineer · Feb 2024 – Present</span></div>
+          <ul>
+            <li>Built features in Python/Django/React for e‑commerce flows.</li>
+            <li>Optimized PostgreSQL queries (~50% speedup) for critical endpoints.</li>
+            <li>Designed secure REST APIs for cross‑system integration.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="where"><b>FactSet Research Systems</b><span class="meta">Software Engineer · Aug 2021 – Dec 2022</span></div>
+          <ul>
+            <li>Delivered real‑time financial data in JSON/XML formats.</li>
+            <li>Automated workflows with Python, Perl, and shell scripting (−50% manual effort).</li>
+            <li>Improved subsystem reliability and uptime (+40%).</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="where"><b>Connectial Info Solutions</b><span class="meta">Software Engineer · Jun 2019 – Jul 2021</span></div>
+          <ul>
+            <li>Migrated legacy systems to AWS, reducing costs by ~30%.</li>
+            <li>Developed e‑commerce solutions with customizable features.</li>
+            <li>Built Tableau dashboards for real‑time analytics.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certs -->
+    <section id="education" class="panel">
+      <h2 class="section">Education & Certifications</h2>
+      <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="item">
+          <div class="where"><b>M.S., Computer Science</b><span class="meta">UAB · Jan 2023 – Dec 2024</span></div>
+        </div>
+        <div class="item">
+          <div class="where"><b>B.E., Electronics & Communication</b><span class="meta">CMRCET · Jul 2017 – Apr 2021</span></div>
+        </div>
+        <div class="item">
+          <div class="where"><b>Dell EMC</b><span class="meta">Big Data & Data Analytics</span></div>
+        </div>
+        <div class="item">
+          <div class="where"><b>NPTEL</b><span class="meta">Joy of Computing with Python</span></div>
+        </div>
+        <div class="item">
+          <div class="where"><b>Oracle Academy</b><span class="meta">Database Programming with SQL</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section">Contact</h2>
+      <div class="panel">
+        <p>Email: <a href="mailto:spoorthyreddy232000@gmail.com">spoorthyreddy232000@gmail.com</a></p>
+        <p>Phone: <a href="tel:+12052180524">+1 (205) 218‑0524</a></p>
+        <p>GitHub: <a href="https://github.com/smerugu03" target="_blank" rel="noopener">github.com/smerugu03</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/merugu-spoorthy-reddy-7301511a4/" target="_blank" rel="noopener">linkedin.com/in/merugu-spoorthy-reddy-7301511a4</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Spoorthy Reddy Merugu · Built with HTML/CSS</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
